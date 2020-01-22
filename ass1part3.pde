@@ -15,16 +15,17 @@ void setup(){
 
 void draw(){
   clear();
-  fill(square1);
-  rect(square1x,square1y,squaredim,squaredim);
   
   square1x+=1;
-  if (square1x >= (windowdim-squaredim)){
+  if (square1x > (windowdim-squaredim)){
     if (square1x> windowdim){
       square1x = 0;
     }
     else{
+      fill(square1);
       rect(0,square1y,squaredim-(windowdim-square1x),squaredim);
     }
   }
+  fill(square1);
+  rect(square1x,square1y,squaredim,squaredim);
 }

@@ -12,10 +12,12 @@ radius=20;
 void move(){
 x = x+dx; y = y+dy;
 }
+
 void draw(){
-fill(ballColor);
+  fill(ballColor);
 ellipse(int(x), int(y), radius,
 radius);
+
 }
 void collide(Player tp){
 if(y+radius >= tp.ypos &&
@@ -29,5 +31,19 @@ dy=-dy;
 void collideWall (){
   if(x-radius <=0) dx=-dx;
 else if(x+radius>=SCREENX) dx=-dx;
+}
+
+
+int offScreen(){
+  if (y>=SCREENY){
+    return 1;
+  }
+  else if (y<=0){
+    return 2;
+  }
+  else{
+    return 0;
+  }
+  
 }
 }
